@@ -1,0 +1,29 @@
+# Instrucciones para ejecutar el proyecto localmente
+
+## 1. Clonar el repositorio
+git clone https://github.com/TU_USUARIO/biblioteca_project.git
+cd biblioteca_project
+
+## 2. Crear y activar entorno virtual
+python -m venv venv
+venv\Scripts\activate   # Windows
+
+## 3. Instalar dependencias
+pip install -r requirements.txt
+
+## 4. Ejecutar migraciones
+python manage.py migrate
+
+## 5. Crear superusuario
+python manage.py createsuperuser
+
+## 6. Poblar datos iniciales
+python manage.py shell
+>>> exec(open('poblar_datos.py').read())
+>>> exit()
+
+## 7. Ejecutar el servidor
+python manage.py runserver
+
+Acceder al panel admin:
+http://127.0.0.1:8000/admin/
